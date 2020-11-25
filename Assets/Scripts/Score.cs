@@ -14,24 +14,23 @@ public class Score : MonoBehaviour
 
     public float PointsPerSecond;
 
-    public bool PlayerAlive;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerAlive = true;
+        PlayerHealth.PlayerAlive = true;
 
         if (PlayerPrefs.HasKey("HighScore"))
         {
             HighScoreCount = PlayerPrefs.GetFloat("HighScore"); //HighScore-Anzeige steht bei HighScoreWert und nicht bei 0.
-            
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerAlive)
+        if (PlayerHealth.PlayerAlive == true)
         {
             ScoreCount += PointsPerSecond * Time.deltaTime; //Score wird hochgezählt, wenn Spieler noch lebt
         }
@@ -41,8 +40,6 @@ public class Score : MonoBehaviour
             HighScoreCount = ScoreCount;  //Highscore nimmt Wert von Score an, wenn Score den Highscore überschreitet
             PlayerPrefs.SetFloat("HighScore", HighScoreCount); //HighScore wird gespeichert
         }
-        
-        
 
         aktueller_Score.text = "Score: " + Mathf.Round(ScoreCount);   //Score wird geprintet
         Highscore.text = "HighScore: " + Mathf.Round(HighScoreCount); //HighScore wird geprintet

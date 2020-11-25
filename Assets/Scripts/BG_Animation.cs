@@ -8,7 +8,7 @@ using UnityEngine;
 public class BG_Animation : MonoBehaviour
 {
 
-    public float animationspeed = 0.1f; //Geschwindigkeit, mit der sich der Hintergrund bewegt 
+    public static float animationspeed = 0.1f; //Geschwindigkeit, mit der sich der Hintergrund bewegt 
     private Material BGmaterial; //material = Objekte, z.B. Background
     private Vector2 offset = Vector2.zero; //Offset/Verschiebung: zu Beginn auf Null gesetzt
 

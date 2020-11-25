@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleMovement : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-    public static float speed = -5f;
-    private Rigidbody2D ObstacleRB;
-
+    public static bool PlayerAlive = true;
     // Start is called before the first frame update
     void Start()
     {
-        ObstacleRB = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        ObstacleRB.velocity = new Vector2(speed, 0);
+        
     }
 }
