@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8212679180138884526}
   - component: {fileID: 8212679180138884527}
   - component: {fileID: 4861387046346005292}
+  - component: {fileID: 8830182518223466752}
   m_Layer: 0
   m_Name: Box3
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 48fd9917466ade44fa9bfd8326fab049, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -169,7 +170,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
 --- !u!114 &4861387046346005292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,4 +183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89bfcf12bcbd0c4685af25075cca920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -5
+--- !u!114 &8830182518223466752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212679180138884523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27de04f26abc244aa0a6960b11aba2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
