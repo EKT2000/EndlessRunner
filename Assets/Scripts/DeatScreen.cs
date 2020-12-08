@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class DeatScreen : MonoBehaviour
 {
-    public static bool PlayerAlive;
-    
+    public GameObject Game_Over_Screen;
+
     // Start is called before the first frame update
     void Start()
     {
-        PlayerAlive = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerHealth.PlayerAlive == false)
+        {
+            Game_Over_Screen.SetActive(true);
+        }   
     }
 }
