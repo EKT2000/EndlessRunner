@@ -1,23 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DeatScreen : MonoBehaviour
+public class RestartGame : MonoBehaviour
 {
-    public GameObject Game_Over_Screen;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerHealth.PlayerAlive == false)
-        {
-            Game_Over_Screen.SetActive(true);
-        }   
+         
+    }
+    
+    public void Restart_Game()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
