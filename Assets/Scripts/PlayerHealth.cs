@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         PlayerAlive = true;
+        Jump.jump_forward = 0.1f;
     }
 
     // Update is called once per frame

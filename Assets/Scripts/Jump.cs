@@ -6,7 +6,7 @@ public class Jump : MonoBehaviour
 {
     public float JumpForce = 2;
     private Rigidbody2D _rigidbody;
-    public float jump_forward = 0.1f;
+    public static float jump_forward;
 
     public AudioSource jumpaudio;
 
@@ -37,6 +37,9 @@ public class Jump : MonoBehaviour
         {
             jumpaudio.enabled = false;
         }
-       
+       if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            _rigidbody.AddForce(new Vector2(0, -30), ForceMode2D.Impulse);
+        }
     }
 }
