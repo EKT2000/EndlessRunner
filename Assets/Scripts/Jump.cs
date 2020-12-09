@@ -6,7 +6,7 @@ public class Jump : MonoBehaviour
 {
     public float JumpForce = 2;
     private Rigidbody2D _rigidbody;
-    private float jump_forward;
+    public float jump_forward;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Jump : MonoBehaviour
 
         if (transform.position.x < 0 && transform.position.y > -1)
         {
-            _rigidbody.AddForce(new Vector2(1, 0));
+            _rigidbody.AddForce(new Vector2(jump_forward, 0), ForceMode2D.Impulse);
         }
 
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
