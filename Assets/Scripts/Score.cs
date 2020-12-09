@@ -8,7 +8,9 @@ public class Score : MonoBehaviour
     
     public Text aktueller_Score;
     public Text Highscore;
-    
+    public Text final_Score;
+    public Text final_HighScore;
+
     public float ScoreCount;
     public float HighScoreCount;
 
@@ -43,6 +45,13 @@ public class Score : MonoBehaviour
 
         aktueller_Score.text = "Score: " + Mathf.Round(ScoreCount);   //Score wird geprintet
         Highscore.text = "HighScore: " + Mathf.Round(HighScoreCount); //HighScore wird geprintet
+
+        if (PlayerHealth.PlayerAlive == false)
+        {
+            final_Score.text = aktueller_Score.text;
+            final_HighScore.text = Highscore.text;
+            
+        }
     }
 
    
