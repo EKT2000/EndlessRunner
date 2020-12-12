@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class QuitGame : MonoBehaviour
 {
-    public static bool PlayerAlive;
-    
     // Start is called before the first frame update
     void Start()
     {
-        PlayerAlive = true;
-        Jump.jump_forward = 0.2f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+         
+    }
+    public void Quit_Game()
+    {
+        Application.Quit();
     }
 }

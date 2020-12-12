@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Music_only_inGame : MonoBehaviour
 {
-    public AudioSource BG_Audio;
+    public static AudioSource BG_Audio;
+    public GameObject StartGameScreen;
 
     // Start is called before the first frame update
     void Start()

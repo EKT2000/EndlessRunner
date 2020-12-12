@@ -21,7 +21,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerHealth.PlayerAlive = true;
+        //PlayerHealth.PlayerAlive = true;
 
         if (PlayerPrefs.HasKey("HighScore"))
         {
@@ -53,6 +53,15 @@ public class Score : MonoBehaviour
             
         }
     }
-
+    public void ResetHighScore()
+    {
+        PlayerPrefs.SetFloat("Highscore", 0);
+        ScoreCount = 0;
+        aktueller_Score.text = "Score: " + 0;
+        HighScoreCount = 0;
+        Highscore.text = "HighScore: " + 0;
+        final_Score.text = aktueller_Score.text;
+        final_HighScore.text = Highscore.text;
+    }
    
 }
