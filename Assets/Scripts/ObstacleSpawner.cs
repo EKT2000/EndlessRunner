@@ -8,6 +8,7 @@ public class ObstacleSpawner : MonoBehaviour
     public List<GameObject> obstaclesToSpawn = new List<GameObject>();
 
     int index;
+    float speed;
 
     void Awake() {
         InitObstacles ();
@@ -44,14 +45,14 @@ public class ObstacleSpawner : MonoBehaviour
     IEnumerator SpawnRandomObstacle()
     {
         // Warte eine gewisse Zeit
-        yield return new WaitForSeconds (Random.Range (1.5f, 4.5f));
+        yield return new WaitForSeconds(Random.Range(1.5f, 4.5f));
         int index = Random.Range(0, obstaclesToSpawn.Count);
 
-        while(true)
+        while (true)
         {
-            if(!obstaclesToSpawn[index].activeInHierarchy) {
-                obstaclesToSpawn [index].SetActive(true);
-                obstaclesToSpawn [index].transform.position = transform.position;
+            if (!obstaclesToSpawn[index].activeInHierarchy) {
+                obstaclesToSpawn[index].SetActive(true);
+                obstaclesToSpawn[index].transform.position = transform.position;
                 break;
             }
             else {
@@ -60,5 +61,10 @@ public class ObstacleSpawner : MonoBehaviour
         }
 
         StartCoroutine(SpawnRandomObstacle());
+    
+
+        
+
+
     }
 }

@@ -26,6 +26,11 @@ public class BG_Animation : MonoBehaviour
     {
         offset.x = offset.x + animationspeed * Time.deltaTime; //Time.deltatime = Vergangene Zeit bis zur vollständigen Anzeige des letzten Frames
         BGmaterial.SetTextureOffset("_MainTex", offset); //Material bekommt Offset hinzugefügt, offset wird frame für frame größer
+        animationspeed = animationspeed + 0.000006f;
+        if (PlayerHealth.PlayerAlive == false)
+        {
+            animationspeed = 0.1f;
+        }
 
     }
 }
