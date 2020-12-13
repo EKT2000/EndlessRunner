@@ -10,6 +10,8 @@ public class ObstacleSpawner : MonoBehaviour
     int index;
     float speed;
 
+    public static float FasterGameTime = 1;
+
     void Awake() {
         InitObstacles ();
     }
@@ -23,7 +25,15 @@ public class ObstacleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (FasterGameTime > 0.5f)
+        {
+            FasterGameTime = FasterGameTime - 0.0001f;
+        }
+        if (PlayerHealth.PlayerAlive == false)
+        {
+            FasterGameTime = 1;
+        }
+
     }
 
     void InitObstacles()
@@ -45,7 +55,7 @@ public class ObstacleSpawner : MonoBehaviour
     IEnumerator SpawnRandomObstacle()
     {
         // Warte eine gewisse Zeit
-        yield return new WaitForSeconds(Random.Range(1.5f, 4.5f));
+        yield return new WaitForSeconds(Random.Range(1.5f * FasterGameTime, 3.5f * FasterGameTime));
         int index = Random.Range(0, obstaclesToSpawn.Count);
 
         while (true)

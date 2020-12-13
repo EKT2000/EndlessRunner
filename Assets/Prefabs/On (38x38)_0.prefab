@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89bfcf12bcbd0c4685af25075cca920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObstacleRB: {fileID: 0}
 --- !u!50 &210096694124212392
 Rigidbody2D:
   serializedVersion: 4
@@ -138,7 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 6
 --- !u!61 &854257348901158196
 BoxCollider2D:
   m_ObjectHideFlags: 0
