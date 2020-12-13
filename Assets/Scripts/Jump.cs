@@ -9,13 +9,13 @@ public class Jump : MonoBehaviour
     public static float jump_forward;
 
     public AudioSource jumpaudio;
-
+   
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         jumpaudio = GetComponent<AudioSource>();
-
+        jumpaudio.enabled = true;
     }
 
     // Update is called once per frame
@@ -37,6 +37,7 @@ public class Jump : MonoBehaviour
         {
             jumpaudio.enabled = false;
         }
+
        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             _rigidbody.AddForce(new Vector2(0, -30), ForceMode2D.Impulse);
