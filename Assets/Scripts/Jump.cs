@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jump : MonoBehaviour
 {
@@ -27,18 +28,29 @@ public class Jump : MonoBehaviour
             _rigidbody.AddForce(new Vector2(jump_forward, 0), ForceMode2D.Impulse);
         }
 
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if ((Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.RightArrow)) && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {    
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             jumpaudio.Play();
         }
-
+        
         if (PlayerHealth.PlayerAlive == false)
         {
             jumpaudio.enabled = false;
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
         }
 
-       if (Input.GetKeyDown(KeyCode.LeftShift))
+       if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             _rigidbody.AddForce(new Vector2(0, -30), ForceMode2D.Impulse);
         }

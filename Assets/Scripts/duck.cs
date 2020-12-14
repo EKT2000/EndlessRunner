@@ -23,15 +23,13 @@ public class duck : MonoBehaviour
     {
         if (transform.position.y < -2)
         {
-            if (Input.GetKeyDown("c"))
+            if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.DownArrow))
             {
                 PlayerCollider.size = new Vector2(0.2f, 0.1f);
                 PlayerCollider.offset = new Vector2(0, 0.05f);
                 OrderinLayer.sortingOrder = 0;
                 _RigidBody.AddForce(new Vector2(0, -duckforce), ForceMode2D.Impulse);
-            }
-
-            if (Input.GetKeyUp("c"))
+            }  else
             {
                 PlayerCollider.size = new Vector2(0.2f, 0.24f);
                 PlayerCollider.offset = new Vector2(0, 0);
